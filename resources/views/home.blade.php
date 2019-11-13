@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <title>Laravel</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="img/ro-botika.png"style="height: 60px" alt="">
-        </a>
+@extends('layouts.app')
 
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Iniciar Sesion</a>
-          </li>
-      </ul>
-  </div>
-</nav>
-<h1>Inicio</h1>
-</body>
-</html>
+
+@section('content')
+
+  Las tablas de una base de datos a menudo están relacionadas unas con otras. El objetivo de este ejercicio es entender cómo el ORM de Laravel gestiona las relaciones entre tablas permitiéndonos acceder a información relacionada como si estuviera en el propio modelo evitando tener que construir consultas de forma manual.
+
+  Vamos a ver las relaciones: 1:1, 1:N y M:N.
+
+@endsection
