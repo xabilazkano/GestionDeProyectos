@@ -10,4 +10,15 @@ class ProyectoController extends Controller
     	$proyectos = Proyecto::all();
     	return view('proyectos/index',['proyectos'=>$proyectos]);
     }
+
+
+    public function show($id){
+    	$proyectos = Proyecto::all()->where('id',$id);
+    	return view('proyectos/show',['proyectos'=>$proyectos]);
+    }
+
+    public function delete($id){
+    	 Proyecto::where("id",$id)->delete();
+        return view("proyectos/index");
+    }
 }

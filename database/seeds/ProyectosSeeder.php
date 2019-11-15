@@ -16,44 +16,50 @@ public function run()
         $fechainicio = date ( 'Y/m/d' , $fechainicio);
         $fechafin = strtotime ( "+".rand(30,500)." day" , strtotime ( $fecha ) ) ;
         $fechafin = date ( 'Y/m/d' , $fechafin );
-
-        Proyecto::insert([
-            'nombre' => 'Xabi',
-            'titulo' => 'Ro-Botika',
-            'fechainicio' => $fechainicio,
-            'fechafin'  => $fechafin,
-            'horasestimadas' => rand(500,3000)
-        ]);
-        Proyecto::insert([
-            'nombre' => 'Eneko',
-            'titulo' => 'Garbera',
-            'fechainicio' => $fechainicio,
-            'fechafin'  => $fechafin,
-            'horasestimadas' => rand(500,3000)
-        ]);
-        Proyecto::insert([
-            'nombre' => 'Peru',
-            'titulo' => 'Azkena',
-            'fechainicio' => $fechainicio,
-            'fechafin'  => $fechafin,
-            'horasestimadas' => rand(500,3000)
-        ]);
-
-        Proyecto::insert([
-            'nombre' => 'Pello',
-            'titulo' => 'Proyecto4',
-            'fechainicio' => $fechainicio,
-            'fechafin'  => $fechafin,
-            'horasestimadas' => rand(500,3000)
-        ]);
-
-        Proyecto::insert([
-            'nombre' => 'Joseba',
-            'titulo' => 'Proyecto5',
-            'fechainicio' => $fechainicio,
-            'fechafin'  => $fechafin,
-            'horasestimadas' => rand(500,3000)
-        ]);
     }
+
+    Proyecto::insert([
+        'nombre' => 'Botika',
+        'titulo' => 'Ro-Botika',
+        'fechainicio' => $fechainicio,
+        'fechafin'  => $fechafin,
+        'horasestimadas' => rand(500,3000),
+        'empleado_id' => 1
+    ]);
+    Proyecto::insert([
+        'nombre' => 'Garbera',
+        'titulo' => 'Garbera',
+        'fechainicio' => $fechainicio,
+        'fechafin'  => $fechafin,
+        'horasestimadas' => rand(500,3000),
+        'empleado_id' => 2
+    ]);
+    Proyecto::insert([
+        'nombre' => 'Last',
+        'titulo' => 'Azkena',
+        'fechainicio' => $fechainicio,
+        'fechafin'  => $fechafin,
+        'horasestimadas' => rand(500,3000),
+        'empleado_id' => 3
+    ]);
+
+    Proyecto::insert([
+        'nombre' => 'P4',
+        'titulo' => 'Proyecto4',
+        'fechainicio' => $fechainicio,
+        'fechafin'  => $fechafin,
+        'horasestimadas' => rand(500,3000),
+        'empleado_id' => 4
+    ]);
+
+    Proyecto::insert([
+        'nombre' => 'P5',
+        'titulo' => 'Proyecto5',
+        'fechainicio' => $fechainicio,
+        'fechafin'  => $fechafin,
+        'horasestimadas' => rand(500,3000),
+        'empleado_id' => 5
+    ]);
+    
 }
 }

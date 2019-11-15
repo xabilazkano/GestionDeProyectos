@@ -30,3 +30,7 @@ Route::get('/departamentos', function () {
 Route::get('/buscarempleados','EmpleadoController@index')->name('buscarempleados');
 Route::get('/buscarproyectos','ProyectoController@index')->name('buscarproyectos');
 Route::get('/buscardepartamentos','DepartamentoController@index')->name('buscardepartamentos');
+Route::get('/showempleados/{id}','EmpleadoController@show')->name('showempleados');
+Route::get('/showdepartamentos/{id}','DepartamentoController@show')->name('showdepartamentos');
+Route::get('/showproyectos/{id}','ProyectoController@show')->name('showproyectos');
+Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyectos');
