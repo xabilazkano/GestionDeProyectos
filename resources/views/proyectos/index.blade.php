@@ -6,7 +6,7 @@
   <tr>
     <th>Id</th>
     <th>Titulo</th>
-    <th>Responsable del proyecto</th>
+    <th>Responsables del proyecto</th>
     <th></th>
     <th></th>
   </tr>
@@ -18,7 +18,11 @@
       </a>
     </td>
     <td>{{$proyecto->titulo}}</td>
-    <td><a href="{{route('showempleados',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</a></td>
+    <td>
+      @foreach($proyecto->empleado as $empleado)
+      <a href="{{route('showempleados',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
+      @endforeach
+    </td>
     <td><a href="{{route('deleteproyecto',$proyecto->id)}}">Eliminar</a></td>
     <td><a href="#">Editar</a></td>
   </tr>

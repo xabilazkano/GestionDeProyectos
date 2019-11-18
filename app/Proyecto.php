@@ -8,6 +8,6 @@ class Proyecto extends Model
 {
 	public function empleado()
 	{
-		return $this->belongsTo('App\Empleado');
+		return $this->belongsToMany('App\Empleado')->withPivot('fechainicio','fechafin');
 	}
 }

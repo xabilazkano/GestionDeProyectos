@@ -9,7 +9,9 @@ Titulo: {{$proyecto->titulo}}<br>
 Fecha de inicio: {{$proyecto->fechainicio}}<br>
 Fecha final:{{$proyecto->fechafin}}<br>
 Horas estimadas: {{$proyecto->horasestimadas}}<br>
-Responsable del proyecto {{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}
+Responsables del proyecto:
+@foreach($proyecto->empleado as $empleado)
+{{$empleado->nombre}}  {{$empleado->apellido}}
 @endforeach
-
+@endforeach
 @endsection

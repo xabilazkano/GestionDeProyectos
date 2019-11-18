@@ -8,7 +8,7 @@ class Empleado extends Model
 {
 	public function proyecto()
 	{
-		return $this->hasOne('App\Proyecto');
+		return $this->belongsToMany('App\Proyecto')->withPivot('fechainicio','fechafin');
 	}
 
 	public function departamento()

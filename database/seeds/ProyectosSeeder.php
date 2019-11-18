@@ -11,7 +11,6 @@ class ProyectosSeeder extends Seeder
     public function run()
     {
         $fecha = date('Y/m/d');
-        $num=1;
         for ($i=0;$i<5;$i++) {
             $fechainicio = strtotime ( "+".rand(1,31)." day" , strtotime ( $fecha ) ) ;
             $fechainicio = date ( 'Y/m/d' , $fechainicio);
@@ -22,10 +21,8 @@ class ProyectosSeeder extends Seeder
                 'titulo' => Str::random(20),
                 'fechainicio' => $fechainicio,
                 'fechafin'  => $fechafin,
-                'horasestimadas' => rand(500,3000),
-                'empleado_id' => $num
+                'horasestimadas' => rand(500,3000)
             ]);
-            $num++;
         }
     }
 }
