@@ -27,8 +27,11 @@ class Validation extends FormRequest
             'nombre' => 'required',
             'titulo' => 'required',
             'inicio' => 'required',
-            'final' => 'required',
+            'final' => 'required|after:inicio',
             'horas' => 'required'
         ];
     }
+
+   
+
 }
