@@ -27,10 +27,17 @@ Route::get('/departamentos', function () {
     return view('departamentos/index');
 })->name('departamentos');
 
+Route::get('/addproyecto', function(){
+	return view('proyectos/addproyecto');
+})->name('addproyecto');
+
+
 Route::get('/buscarempleados','EmpleadoController@index')->name('buscarempleados');
 Route::get('/buscarproyectos','ProyectoController@index')->name('buscarproyectos');
 Route::get('/buscardepartamentos','DepartamentoController@index')->name('buscardepartamentos');
 Route::get('/showempleados/{id}','EmpleadoController@show')->name('showempleados');
 Route::get('/showdepartamentos/{id}','DepartamentoController@show')->name('showdepartamentos');
 Route::get('/showproyectos/{id}','ProyectoController@show')->name('showproyectos');
-Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyectos');
+Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyecto');
+
+Route::post('/addproyecto1','ProyectoController@add')->name('enviarproyecto');

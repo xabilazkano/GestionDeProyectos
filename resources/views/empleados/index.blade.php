@@ -7,6 +7,7 @@
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Proyecto</th>
+    <th>Departamento</th>
   </tr>
   @foreach ($empleados as $empleado)
   <tr>
@@ -24,6 +25,8 @@
       </a>
       @endif
     </td>
+    <td>{{$empleado->departamento->nombre}}</td>
+
   </tr>
   @endforeach
 </table>

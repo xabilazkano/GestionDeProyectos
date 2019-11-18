@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h2>Proyectos</h2>
+<center><a href="{{route('addproyecto')}}">Añadir proyecto</a></center><br>
 <table style="text-align: center;">
   <tr>
     <th>Id</th>
@@ -18,7 +19,7 @@
     </td>
     <td>{{$proyecto->titulo}}</td>
     <td><a href="{{route('showempleados',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</a></td>
-    <td><a href="#">Eliminar</a></td>
+    <td><a href="{{route('deleteproyecto',$proyecto->id)}}">Eliminar</a></td>
     <td><a href="#">Editar</a></td>
   </tr>
   @endforeach

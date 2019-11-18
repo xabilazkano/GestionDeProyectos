@@ -2,26 +2,14 @@
 @section('content')
 
 <h2>Proyectos</h2>
-<table style="text-align: center;">
-  <tr>
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Titulo</th>
-    <th>Fecha Inicio</th>
-    <th>Fecha fin</th>
-    <th>Horas estimadas</th>
-    <th>Responsable del proyecto</th>
-  </tr>
-  @foreach ($proyectos as $proyecto)
-  <tr>
-    <td>{{$proyecto->id}}</td>
-    <td>{{$proyecto->nombre}}</td>
-    <td>{{$proyecto->titulo}}</td>
-    <td>{{$proyecto->fechainicio}}</td>
-    <td>{{$proyecto->fechafin}}</td>
-    <td>{{$proyecto->horasestimadas}}</td>
-    <td>{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</td>
-  </tr>
-  @endforeach
-</table>
+@foreach ($proyectos as $proyecto)
+ID: {{$proyecto->id}}<br>
+Nombre: {{$proyecto->nombre}}<br>
+Titulo: {{$proyecto->titulo}}<br>
+Fecha de inicio: {{$proyecto->fechainicio}}<br>
+Fecha final:{{$proyecto->fechafin}}<br>
+Horas estimadas: {{$proyecto->horasestimadas}}<br>
+Responsable del proyecto {{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}
+@endforeach
+
 @endsection
