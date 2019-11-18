@@ -31,6 +31,10 @@ Route::get('/addproyecto', function(){
 	return view('proyectos/addproyecto');
 })->name('addproyecto');
 
+Route::get('/updateproyecto/{id}', function($id){
+	return view('proyectos/updateproyecto',['id'=>$id]);
+})->name('modificarproyecto');
+
 
 Route::get('/buscarempleados','EmpleadoController@index')->name('buscarempleados');
 Route::get('/buscarproyectos','ProyectoController@index')->name('buscarproyectos');
@@ -40,4 +44,5 @@ Route::get('/showdepartamentos/{id}','DepartamentoController@show')->name('showd
 Route::get('/showproyectos/{id}','ProyectoController@show')->name('showproyectos');
 Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyecto');
 
-Route::post('/addproyecto1','ProyectoController@add')->name('enviarproyecto');
+Route::post('/addproyecto1','ProyectoController@store')->name('enviarproyecto');
+Route::post('/updateproyecto1','ProyectoController@update')->name('updateproyecto');

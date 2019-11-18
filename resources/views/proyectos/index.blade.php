@@ -24,7 +24,7 @@
       @endforeach
     </td>
     <td><a href="{{route('deleteproyecto',$proyecto->id)}}">Eliminar</a></td>
-    <td><a href="#">Editar</a></td>
+    <td><a href="{{route('modificarproyecto',$proyecto->id)}}">Editar</a></td>
   </tr>
   @endforeach
 </table>
