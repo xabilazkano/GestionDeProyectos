@@ -25,7 +25,11 @@
       </a>
       @endforeach
     </td>
-    <td>{{$empleado->departamento->nombre}}</td>
+    <td>
+      @if (!is_null($empleado->departamento))
+      <a href="">{{$empleado->departamento->nombre}}</a>
+      @endif
+    </td>
 
   </tr>
   @endforeach

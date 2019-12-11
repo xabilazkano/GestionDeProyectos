@@ -9,19 +9,23 @@ class ProyectoController extends Controller
 {
 	public function index(){
 		$proyectos = Proyecto::all();
-		return view('proyectos/index',['proyectos'=>$proyectos]);
+		return view('proyectos.index',['proyectos'=>$proyectos]);
 	}
 
 
 	public function show($id){
 		$proyectos = Proyecto::all()->where('id',$id);
-		return view('proyectos/show',['proyectos'=>$proyectos]);
+		return view('proyectos.show',['proyectos'=>$proyectos]);
 	}
 
-	public function delete($id){
+	public function create(){
+		return view("proyectos.addproyecto");
+	}
+
+	public function destroy($id){
 		Proyecto::where("id",$id)->delete();
 		$proyectos=Proyecto::all();
-		return view("proyectos/index",['proyectos'=>$proyectos]);
+		return view("proyectos.index",['proyectos'=>$proyectos]);
 	}
 
 	public function store(Validation $request){
@@ -37,12 +41,16 @@ class ProyectoController extends Controller
 			['nombre'=>$nombre,'titulo'=>$titulo,'fechainicio'=>$inicio,'fechafin'=>$final,'horasestimadas'=>$horas]
 		);
 		$proyectos = Proyecto::all();
-		return view('proyectos/index',['proyectos'=>$proyectos]);
+		return view('proyectos.index',['proyectos'=>$proyectos]);
+	}
+
+	public function edit($id){
+		return view('proyectos.updateproyecto',['id'=>$id]);
 	}
 
 	public function update(Request $request){
 		Proyecto::where('id',$request->input('id'))->update(['titulo'=>$request->input('titulo'),'fechainicio'=>$request->input('inicio'),'fechafin'=>$request->input('final'),'horasestimadas'=>$request->input('horas')]);
 		$proyectos = Proyecto::all();
-		return view('proyectos/index',['proyectos'=>$proyectos]);
+		return view('proyectos.index',['proyectos'=>$proyectos]);
 	}
 }

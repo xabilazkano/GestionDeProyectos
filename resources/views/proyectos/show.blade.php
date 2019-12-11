@@ -11,7 +11,7 @@ Fecha final:{{$proyecto->fechafin}}<br>
 Horas estimadas: {{$proyecto->horasestimadas}}<br>
 Responsables del proyecto:
 @foreach($proyecto->empleado as $empleado)
-{{$empleado->nombre}}  {{$empleado->apellido}}
+<a href="{{route('showempleados',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
 @endforeach
 @endforeach
 @endsection

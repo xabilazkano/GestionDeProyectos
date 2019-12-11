@@ -14,7 +14,7 @@ class AñadirDepartamentoId extends Migration
     public function up()
     {
         Schema::table('empleados', function (Blueprint $table) {
-            $table->unsignedBigInteger('departamento_id');
+            $table->unsignedBigInteger('departamento_id')->nullable();
             $table->foreign('departamento_id')->references('id')->on('departamentos');
         });
     }

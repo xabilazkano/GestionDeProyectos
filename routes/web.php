@@ -15,27 +15,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/empleados', function () {
-    return view('empleados/index');
-})->name('empleados');
+Route::get('/listados', function () {
+	return view('listados');
+})->name('listados');
 
-Route::get('/proyectos', function () {
-    return view('proyectos/index');
-})->name('proyectos');
-
-Route::get('/departamentos', function () {
-    return view('departamentos/index');
-})->name('departamentos');
-
-Route::get('/addproyecto', function(){
-	return view('proyectos/addproyecto');
-})->name('addproyecto');
-
-Route::get('/updateproyecto/{id}', function($id){
-	return view('proyectos/updateproyecto',['id'=>$id]);
-})->name('modificarproyecto');
-
-
+Route::get('/addproyecto', 'ProyectoController@create')->name('addproyecto');
+Route::get('/updateproyecto/{id}', 'ProyectoController@edit')->name('modificarproyecto');
 Route::get('/buscarempleados','EmpleadoController@index')->name('buscarempleados');
 Route::get('/buscarproyectos','ProyectoController@index')->name('buscarproyectos');
 Route::get('/buscardepartamentos','DepartamentoController@index')->name('buscardepartamentos');

@@ -18,7 +18,7 @@ class CrearTablaEmpleados extends Migration
             $table->string('nombre',30)->unique();
             $table->string('apellido',30);
             $table->string('email',50);
-            $table->string('telefono',9);
+            $table->string('telefono');
             $table->timestamps();
         });
     }
