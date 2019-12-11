@@ -10,4 +10,9 @@ class Departamento extends Model
     {
     	return $this->hasMany('App\Empleado');
     }
+
+     public function jefe()
+    {
+        return $this->hasOne('App\Empleado', 'id', 'jefe_id');
+    }
 }

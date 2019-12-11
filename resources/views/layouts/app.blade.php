@@ -14,8 +14,7 @@
             </div>
         </center>
     </div>
-</div>
-<footer class="footer">
+<footer class="footer fixed-bottom">
     @include('layouts.footer')
 </footer>
 </body>

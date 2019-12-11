@@ -20,7 +20,7 @@
     <td>{{$departamento->nombre}}</td>
     <td>
       @foreach($departamento->empleado as $empleado)
-      {{$empleado->nombre}}
+      <a href="{{route('showempleados',$empleado->id)}}">  {{$empleado->nombre}}</a>
       @endforeach
     </td>
   </tr>
