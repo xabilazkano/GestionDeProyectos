@@ -12,6 +12,8 @@ class EmpleadosSeeder extends Seeder
      */
     public function run()
     {
+        factory(App\Empleado::class,10)->create();
+        /*
         Empleado::insert([
         	'nombre' => 'Xabi',
         	'apellido' => 'Lazkano',
@@ -90,6 +92,6 @@ class EmpleadosSeeder extends Seeder
             'email' => 'pello@gmail.com',
             'telefono' => '966666666',
             'departamento_id' => 1
-        ]);
+        ]);*/
     }
 }

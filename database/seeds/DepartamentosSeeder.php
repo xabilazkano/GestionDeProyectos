@@ -12,7 +12,10 @@ class DepartamentosSeeder extends Seeder
      */
     public function run()
     {
-        Departamento::insert([
+
+        factory(App\Departamento::class,3)->create();
+
+        /*Departamento::insert([
         	'nombre' => 'Informatica'
         ]);
 
@@ -22,6 +25,6 @@ class DepartamentosSeeder extends Seeder
 
         Departamento::insert([
         	'nombre' => 'Contabilidad'
-        ]);
+        ]);*/
     }
 }

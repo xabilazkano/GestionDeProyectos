@@ -12,7 +12,7 @@
   @foreach ($empleados as $empleado)
   <tr>
     <td>
-      <a href="{{route('showempleados',$empleado->id)}}">
+      <a href="{{route('empleados.show',$empleado->id)}}">
         {{$empleado->id}}
       </a>
     </td>
@@ -20,14 +20,14 @@
     <td>{{$empleado->apellido}}</td>
     <td>
       @isset($empleado->proyecto)
-      <a href="{{route('showproyectos',$empleado->proyecto->id)}}"> 
+      <a href="{{route('proyectos.show',$empleado->proyecto->id)}}"> 
         {{$empleado->proyecto->titulo}}
       </a>
       @endisset
     </td>
     <td>
       @if (!is_null($empleado->departamento))
-      <a href="">{{$empleado->departamento->nombre}}</a>
+      <a href="{{route('departamentos.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a>
       @endif
     </td>
 

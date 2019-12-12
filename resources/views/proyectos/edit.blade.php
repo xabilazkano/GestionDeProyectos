@@ -1,13 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<h2>Añadir proyecto</h2>
+<h2>Editar proyecto</h2>
 
-<form method="post" action="{{route('enviarproyecto')}}">
+<form method="POST" action="{{route('proyectos.update',$id)}}">
 	@csrf
-	Nombre: <input type="text" name="nombre">
-	@if ($errors->has('nombre'))
-	<b>{{$errors->first('nombre')}}</b>
-	@endif <br><br>
+	@method('PATCH')
 	Titulo: <input type="text" name="titulo">
 	@if ($errors->has('titulo'))
 	<b>{{$errors->first('titulo')}}</b>

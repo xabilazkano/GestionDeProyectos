@@ -15,9 +15,9 @@ class CrearTablaEmpleadoProyecto extends Migration
     {
         Schema::create('empleado_proyecto', function (Blueprint $table) {
             $table->unsignedBigInteger('empleado_id');
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
             $table->unsignedBigInteger('proyecto_id');
-            $table->foreign('proyecto_id')->references('id')->on('proyectos');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
             $table->date('fechainicio');
             $table->date('fechafin');
         });

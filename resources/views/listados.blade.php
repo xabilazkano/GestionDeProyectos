@@ -30,18 +30,18 @@
 			@foreach ($proyectos as $proyecto)
 			<tr>
 				<td>
-					<a href="{{route('showproyectos',$proyecto->id)}}">
+					<a href="{{route('proyectos.index',$proyecto->id)}}">
 						{{$proyecto->id}}
 					</a>
 				</td>
 				<td>{{$proyecto->titulo}}</td>
 				<td>
 					@foreach($proyecto->empleados as $empleado)
-					<a href="{{route('showempleados',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
+					<a href="{{route('empleados.show',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
 					@endforeach
 				</td>
-				<td><a href="{{route('deleteproyecto',$proyecto->id)}}">Eliminar</a></td>
-				<td><a href="{{route('modificarproyecto',$proyecto->id)}}">Editar</a></td>
+				<td><a href="{{route('proyectos.destroy',$proyecto->id)}}">Eliminar</a></td>
+				<td><a href="{{route('proyectos.edit',$proyecto->id)}}">Editar</a></td>
 			</tr>
 			@endforeach
 		</table>
@@ -58,7 +58,7 @@
 			@foreach ($empleados as $empleado)
 			<tr>
 				<td>
-					<a href="{{route('showempleados',$empleado->id)}}">
+					<a href="{{route('empleados.show',$empleado->id)}}">
 						{{$empleado->id}}
 					</a>
 				</td>

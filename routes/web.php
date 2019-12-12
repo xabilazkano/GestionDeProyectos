@@ -12,25 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+	return view('home');
 })->name('home');
 
 Route::get('/listados', function () {
 	return view('listados');
 })->name('listados');
 
-Route::get('/addproyecto', 'ProyectoController@create')->name('addproyecto');
-Route::get('/updateproyecto/{id}', 'ProyectoController@edit')->name('modificarproyecto');
-Route::get('/buscarempleados','EmpleadoController@index')->name('buscarempleados');
-Route::get('/buscarproyectos','ProyectoController@index')->name('buscarproyectos');
-Route::get('/buscardepartamentos','DepartamentoController@index')->name('buscardepartamentos');
-Route::get('/showempleados/{id}','EmpleadoController@show')->name('showempleados');
-Route::get('/showdepartamentos/{id}','DepartamentoController@show')->name('showdepartamentos');
-Route::get('/showproyectos/{id}','ProyectoController@show')->name('showproyectos');
-Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyecto');
 Route::get('/listados/proyectosactuales', 'ProyectoController@indexActuales')->name('indexActuales');
 Route::get('/sinproyecto', 'EmpleadoController@sinproyecto')->name('sinproyecto');
 Route::get('/multi','EmpleadoController@multiproyecto')->name('multi');
+Route::get('/asignarProyecto/{id}','AsignarController@asignarProyecto')->name('asignarProyecto');
+Route::post('/trabajarProyecto/{id}', 'AsignarController@trabajarProyecto')->name('trabajarProyecto');
+Route::get('/form', 'AsignarController@formempleado')->name('formempleado');
+Route::post('/asignarEmpleado', 'AsignarController@asignarEmpleado')->name('asignarempleado');
 
-Route::post('/addproyecto1','ProyectoController@store')->name('enviarproyecto');
-Route::post('/updateproyecto1','ProyectoController@update')->name('updateproyecto');
+Route::resource('departamentos','DepartamentoController')->only(['index','show']);
+Route::resource('proyectos','ProyectoController');
+Route::resource('empleados','EmpleadoController')->only(['index','show']);

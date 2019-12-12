@@ -11,8 +11,10 @@ Fecha final:{{$proyecto->fechafin}}<br>
 Horas estimadas: {{$proyecto->horasestimadas}}<br>
 Empleados del proyecto:
 @foreach($proyecto->empleados as $empleado)
-<a href="{{route('showempleados',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
+<a href="{{route('empleados.show',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
 @endforeach
-<br>Responsable del proyecto: <a href="{{route('showempleados',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</a>
+@isset($proyecto->empleado)
+<br>Responsable del proyecto: <a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</a>
+@endisset
 @endforeach
 @endsection
