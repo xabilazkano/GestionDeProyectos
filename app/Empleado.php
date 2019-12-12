@@ -9,9 +9,14 @@ class Empleado extends Model
 
 	protected $fillable = ["nombre","apellido","email","telefono"];
 
-	public function proyecto()
-	{
-		return $this->belongsToMany('App\Proyecto')->withPivot('fechainicio','fechafin');
+	public function proyecto(){
+		return $this->hasone('App\Proyecto');
+	}
+
+
+	
+	public function proyectos(){
+		return $this->belongstomany('App\Proyecto')->withPivot('fechainicio', 'fechafin');
 	}
 
 	public function departamento()
@@ -20,7 +25,7 @@ class Empleado extends Model
 	}
 
 	public function jefeDepartamento()
-    {
-        return $this->belongsTo('App\Departamento', 'id', 'jefe_id');
-    }
+	{
+		return $this->belongsTo('App\Departamento', 'id', 'jefe_id');
+	}
 }

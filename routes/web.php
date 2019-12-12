@@ -28,6 +28,9 @@ Route::get('/showempleados/{id}','EmpleadoController@show')->name('showempleados
 Route::get('/showdepartamentos/{id}','DepartamentoController@show')->name('showdepartamentos');
 Route::get('/showproyectos/{id}','ProyectoController@show')->name('showproyectos');
 Route::get('/deleteproyecto/{id}','ProyectoController@delete')->name('deleteproyecto');
+Route::get('/listados/proyectosactuales', 'ProyectoController@indexActuales')->name('indexActuales');
+Route::get('/sinproyecto', 'EmpleadoController@sinproyecto')->name('sinproyecto');
+Route::get('/multi','EmpleadoController@multiproyecto')->name('multi');
 
 Route::post('/addproyecto1','ProyectoController@store')->name('enviarproyecto');
 Route::post('/updateproyecto1','ProyectoController@update')->name('updateproyecto');

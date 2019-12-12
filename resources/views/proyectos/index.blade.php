@@ -19,9 +19,7 @@
     </td>
     <td>{{$proyecto->titulo}}</td>
     <td>
-      @foreach($proyecto->empleado as $empleado)
-      <a href="{{route('showempleados',$empleado->id)}}">{{$empleado->nombre}}  {{$empleado->apellido}}</a>
-      @endforeach
+      <a href="{{route('showempleados',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}  {{$proyecto->empleado->apellido}}</a>
     </td>
     <td><a href="{{route('deleteproyecto',$proyecto->id)}}">Eliminar</a></td>
     <td><a href="{{route('modificarproyecto',$proyecto->id)}}">Editar</a></td>

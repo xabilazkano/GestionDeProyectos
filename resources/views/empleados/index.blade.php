@@ -6,7 +6,7 @@
     <th>Id</th>
     <th>Nombre</th>
     <th>Apellido</th>
-    <th>Proyectos</th>
+    <th>Proyecto</th>
     <th>Departamento</th>
   </tr>
   @foreach ($empleados as $empleado)
@@ -19,11 +19,11 @@
     <td>{{$empleado->nombre}}</td>
     <td>{{$empleado->apellido}}</td>
     <td>
-      @foreach($empleado->proyecto as $proyecto)
-      <a href="{{route('showproyectos',$proyecto->id)}}"> 
-        {{$proyecto->titulo}}
+      @isset($empleado->proyecto)
+      <a href="{{route('showproyectos',$empleado->proyecto->id)}}"> 
+        {{$empleado->proyecto->titulo}}
       </a>
-      @endforeach
+      @endisset
     </td>
     <td>
       @if (!is_null($empleado->departamento))

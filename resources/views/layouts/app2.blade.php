@@ -7,7 +7,7 @@
 <body>        
     @include('layouts.nav')
         <div class="op">
-            @yield('content')
+            @yield('listados')
         </div>
     <footer class="footer fixed-bottom">
         @include('layouts.footer')
